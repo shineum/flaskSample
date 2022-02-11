@@ -6,7 +6,6 @@ app = Flask(__name__)
 def path_test():
     return '<p>test</p>'
 
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def hello_world():
     return '<p>Hello World</p>'
-
