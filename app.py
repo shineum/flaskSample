@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -8,4 +8,8 @@ def path_test():
 
 @app.route("/", methods=['GET', 'POST'])
 def hello_world():
-    return '<p>Hello World</p>'
+    if request.method == 'GET':
+        return '<p>GET: Hello World</p>'
+    elif request.method == 'POST':
+        return '<p>POST: Hello World</p>'
+
